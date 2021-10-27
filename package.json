@@ -1,0 +1,30 @@
+{
+  "name": "gh-pages-test",
+  "version": "1.0.0",
+  "description": "A test repository to allow testing changes to github-pages-deploy-action",
+  "main": "src/index.ts",
+  "scripts": {
+    "build-ts": "tsc",
+    "build-sass": "sass --no-source-map src/main.scss dist/main.css",
+    "watch-ts": "tsc --watch",
+    "watch-sass": "sass --no-source-map --watch src/main.scss dist/main.css",
+    "build": "npm run build-ts && npm run build-sass",
+    "start": "npm run build",
+    "watch": "concurrently -c cyan,magenta \"npm:watch-ts\" \"npm:watch-sass\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YashdalfTheGray/gh-pages-test.git"
+  },
+  "author": "Yash Kulshrestha",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/YashdalfTheGray/gh-pages-test/issues"
+  },
+  "homepage": "https://github.com/YashdalfTheGray/gh-pages-test#readme",
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "sass": "^1.43.4",
+    "typescript": "^4.4.4"
+  }
+}
