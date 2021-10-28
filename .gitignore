@@ -1,7 +1,7 @@
 ### Project specific ###
-dist/*.js
-dist/*.css
-dist/*.map
+docs/*.js
+docs/*.css
+docs/*.map
 
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 

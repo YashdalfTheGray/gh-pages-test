@@ -5,9 +5,9 @@
   "main": "src/index.ts",
   "scripts": {
     "build-ts": "tsc",
-    "build-sass": "sass --no-source-map src/main.scss dist/main.css",
+    "build-sass": "sass --no-source-map src/main.scss docs/main.css",
     "watch-ts": "tsc --watch",
-    "watch-sass": "sass --no-source-map --watch src/main.scss dist/main.css",
+    "watch-sass": "sass --no-source-map --watch src/main.scss docs/main.css",
     "build": "npm run build-ts && npm run build-sass",
     "start": "npm run build",
     "watch": "concurrently -c cyan,magenta \"npm:watch-ts\" \"npm:watch-sass\""
