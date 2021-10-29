@@ -2,6 +2,17 @@ $background: #202020;
 $text: #fff;
 $accent: #03a9f4;
 
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: $background;
@@ -71,6 +82,8 @@ body {
       margin: 16px;
 
       .text {
+        animation: animateIn 350ms;
+        transition: color 2s ease-in-out;
         background-color: transparent;
       }
     }
