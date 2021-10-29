@@ -10,7 +10,11 @@
     "watch-sass": "sass --no-source-map --watch src/main.scss docs/main.css",
     "build": "npm run build-ts && npm run build-sass",
     "start": "npm run build",
-    "watch": "concurrently -c cyan,magenta \"npm:watch-ts\" \"npm:watch-sass\""
+    "watch": "concurrently -c cyan,magenta \"npm:watch-ts\" \"npm:watch-sass\"",
+    "build-sass-prod": "sass --no-source-map --style compressed src/main.scss docs/main.css",
+    "build-ts-prod": "tsc && uglifyjs --compress --output docs/main.js -- docs/main.js",
+    "build-prod": "npm run build-sass-prod && npm run build-ts-prod",
+    "clean": "npx rimraf docs/*.css docs/*.js docs/*.map"
   },
   "repository": {
     "type": "git",
