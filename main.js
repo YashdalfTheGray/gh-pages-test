@@ -1,0 +1,6 @@
+"use strict";const defaultText="Sample text",defaultColor="#1976D2";let currentText=defaultText,currentColor=defaultColor;function generate4BitGrayscale(){let channel=16;return["#000",...new Array(15).fill("").map(()=>{var color=channel.toString(16),color=`#${color}${color}${color}`;return channel+=16,color}),"#fff"]}const textInput=document.querySelector("input#text-entry-field"),colorInput=document.querySelector("input#text-color-field"),swatchContainer=document.querySelector("div.text-color-display");function renderSwatches(text=defaultText,color=defaultColor){swatchContainer.innerHTML=generate4BitGrayscale().map((c,i,arr)=>`
+      <div
+        class="swatch"
+        style="background-color: ${c}; border: 1px solid ${arr[arr.length-1-i]}">
+        <span class="text" style="color: ${color}">${text}</span>
+      </div>`).join("\n")}textInput.value=defaultText,colorInput.value=defaultColor,textInput.addEventListener("change",e=>{currentText=e.currentTarget.value,renderSwatches(currentText,currentColor)}),colorInput.addEventListener("change",e=>{currentColor=e.currentTarget.value,renderSwatches(currentText,currentColor)}),renderSwatches();
