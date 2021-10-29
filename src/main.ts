@@ -5,13 +5,17 @@ let currentText = defaultText;
 let currentColor = defaultColor;
 
 function generate4BitGrayscale() {
-  let channel = 0;
-  return new Array(17).fill('').map(() => {
-    const hexChannel = channel.toString(16);
-    const color = `#${hexChannel}${hexChannel}${hexChannel}`;
-    channel += 16;
-    return color;
-  });
+  let channel = 16;
+  return [
+    '#000',
+    ...new Array(15).fill('').map(() => {
+      const hexChannel = channel.toString(16);
+      const color = `#${hexChannel}${hexChannel}${hexChannel}`;
+      channel += 16;
+      return color;
+    }),
+    '#fff',
+  ];
 }
 
 const textInput = document.querySelector<HTMLInputElement>(
@@ -43,12 +47,10 @@ function renderSwatches(text = defaultText, color = defaultColor) {
       (c, i, arr) => `
       <div
         class="swatch"
-        key={${c}}
-        style={{
-          backgroundColor: ${c},
-          border: 1px solid ${arr[arr.length - 1 - i]},
-        }}>
-        <span style={{ color: ${color} }}>${text}</span>
+        style="background-color: ${c}; border: 1px solid ${
+        arr[arr.length - 1 - i]
+      }">
+        <span class="text" style="color: ${color}">${text}</span>
       </div>`
     )
     .join('\n');
