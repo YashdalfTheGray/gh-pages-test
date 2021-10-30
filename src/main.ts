@@ -1,8 +1,10 @@
 const defaultText = 'Sample text';
 const defaultColor = '#1976D2';
+const isColorBackgroundByDefault = false;
 
 let currentText = defaultText;
 let currentColor = defaultColor;
+let isColorBackground = isColorBackgroundByDefault;
 
 function generate4BitGrayscale() {
   let channel = 16;
@@ -24,12 +26,16 @@ const textInput = document.querySelector<HTMLInputElement>(
 const colorInput = document.querySelector<HTMLInputElement>(
   'input#text-color-field'
 )!;
+const useColorForBackground = document.querySelector<HTMLInputElement>(
+  'input#use-color-for-background-field'
+)!;
 const swatchContainer = document.querySelector<HTMLDivElement>(
   'div.text-color-display'
 )!;
 
 textInput.value = defaultText;
 colorInput.value = defaultColor;
+useColorForBackground.checked = isColorBackgroundByDefault;
 
 textInput.addEventListener('change', (e) => {
   currentText = (e.currentTarget as HTMLInputElement).value;
@@ -39,6 +45,10 @@ textInput.addEventListener('change', (e) => {
 colorInput.addEventListener('change', (e) => {
   currentColor = (e.currentTarget as HTMLInputElement).value;
   renderSwatches(currentText, currentColor);
+});
+
+useColorForBackground.addEventListener('change', (e) => {
+  console.log((e.currentTarget as HTMLInputElement).checked);
 });
 
 function renderSwatches(text = defaultText, color = defaultColor) {
