@@ -63,6 +63,50 @@ body {
           margin-bottom: 0px;
         }
       }
+
+      .toggle {
+        position: relative;
+        background: $background;
+        width: 90px;
+        height: 30px;
+        -webkit-appearance: initial;
+        border-radius: 3px;
+        outline: none;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        border: 1px solid #ddd;
+
+        &:focus {
+          border: 1px solid #ddd;
+        }
+      }
+
+      .toggle:after {
+        position: absolute;
+        top: 5%;
+        display: block;
+        line-height: 24px;
+        width: 45%;
+        height: 90%;
+        background: #fff;
+        box-sizing: border-box;
+        text-align: center;
+        transition: all 0.15s ease-in 0s;
+        color: black;
+        border: #888 1px solid;
+        border-radius: 3px;
+      }
+
+      .toggle:after {
+        left: 2%;
+        content: 'OFF';
+      }
+
+      .toggle:checked:after {
+        left: 53%;
+        content: 'ON';
+      }
     }
   }
 
