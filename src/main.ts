@@ -62,9 +62,9 @@ function renderSwatches(
       (c, i, arr) => `
       <div
         class="swatch"
-        style="background-color: ${
-          isColorBackground ? color : c
-        }; border: 1px solid ${arr[arr.length - 1 - i]}">
+        style="--animation-order: ${i}; background-color: ${
+        isColorBackground ? color : c
+      }; border: 1px solid ${arr[arr.length - 1 - i]}">
         <span class="text" style="color: ${
           isColorBackground ? c : color
         }">${text}</span>

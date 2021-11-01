@@ -124,9 +124,16 @@ body {
       align-items: center;
       border-radius: 16px;
       margin: 16px;
+      animation: animateIn 350ms;
+      animation-fill-mode: both;
+      animation-timing-function: ease-in-out;
+      animation-delay: calc(var(--animation-order) * 75ms);
 
       .text {
         animation: animateIn 350ms;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        animation-delay: calc((var(--animation-order) + 2) * 75ms);
         background-color: transparent;
       }
     }
