@@ -1,6 +1,7 @@
 $background: #202020;
 $text: #fff;
 $accent: #03a9f4;
+$animationTime: 350ms;
 
 @keyframes animateIn {
   0% {
@@ -124,13 +125,13 @@ body {
       align-items: center;
       border-radius: 16px;
       margin: 16px;
-      animation: animateIn 350ms;
+      animation: animateIn $animationTime;
       animation-fill-mode: both;
       animation-timing-function: ease-in-out;
       animation-delay: calc(var(--animation-order) * 75ms);
 
       .text {
-        animation: animateIn 350ms;
+        animation: animateIn $animationTime;
         animation-fill-mode: both;
         animation-timing-function: ease-in-out;
         animation-delay: calc((var(--animation-order) + 2) * 75ms);
