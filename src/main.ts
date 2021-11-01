@@ -48,19 +48,26 @@ colorInput.addEventListener('change', (e) => {
 });
 
 useColorForBackground.addEventListener('change', (e) => {
-  console.log((e.currentTarget as HTMLInputElement).checked);
+  isColorBackground = (e.currentTarget as HTMLInputElement).checked;
+  renderSwatches(currentText, currentColor, isColorBackground);
 });
 
-function renderSwatches(text = defaultText, color = defaultColor) {
+function renderSwatches(
+  text = defaultText,
+  color = defaultColor,
+  isColorBackground = isColorBackgroundByDefault
+) {
   swatchContainer.innerHTML = generate4BitGrayscale()
     .map(
       (c, i, arr) => `
       <div
         class="swatch"
-        style="background-color: ${c}; border: 1px solid ${
-        arr[arr.length - 1 - i]
-      }">
-        <span class="text" style="color: ${color}">${text}</span>
+        style="background-color: ${
+          isColorBackground ? color : c
+        }; border: 1px solid ${arr[arr.length - 1 - i]}">
+        <span class="text" style="color: ${
+          isColorBackground ? c : color
+        }">${text}</span>
       </div>`
     )
     .join('\n');
