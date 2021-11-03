@@ -14,25 +14,25 @@ $animationTime: 350ms;
   }
 }
 
-@mixin for-phone-only {
+@mixin for-phone-only() {
   @media (max-width: 599px) {
     @content;
   }
 }
 
-@mixin for-tablet-portrait-up {
+@mixin for-tablet-portrait-up() {
   @media (min-width: 600px) {
     @content;
   }
 }
 
-@mixin for-tablet-landscape-up {
+@mixin for-tablet-landscape-up() {
   @media (min-width: 900px) {
     @content;
   }
 }
 
-@mixin for-desktop-up {
+@mixin for-desktop-up() {
   @media (min-width: 1200px) {
     @content;
   }
@@ -44,6 +44,11 @@ body {
   color: $text;
   margin: 16px;
   display: flex;
+
+  @include for-phone-only() {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 #app-root {
@@ -54,12 +59,24 @@ body {
     margin: 32px;
   }
 
-  .text-picker {
+  .options-picker {
     margin: 32px;
     display: flex;
 
-    div + div {
-      margin-left: 16px;
+    @include for-phone-only() {
+      flex-direction: column;
+
+      div + div {
+        margin-top: 16px;
+      }
+    }
+
+    @include for-tablet-portrait-up() {
+      flex-direction: row;
+
+      div + div {
+        margin-left: 16px;
+      }
     }
 
     div.field {
