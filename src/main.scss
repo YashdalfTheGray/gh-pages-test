@@ -14,6 +14,30 @@ $animationTime: 350ms;
   }
 }
 
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: $background;
@@ -114,8 +138,16 @@ body {
   .text-color-display {
     margin: 32px;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+
+    @include for-phone-only() {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include for-tablet-portrait-up() {
+      flex-direction: row;
+    }
 
     .swatch {
       width: 160px;
