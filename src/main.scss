@@ -51,6 +51,12 @@ body {
   }
 }
 
+input {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -webkit-appearance: none;
+}
+
 #app-root {
   display: flex;
   flex-direction: column;
