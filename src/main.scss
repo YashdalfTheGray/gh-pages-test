@@ -42,7 +42,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: $background;
   color: $text;
-  margin: 16px;
   display: flex;
 
   @include for-phone-only() {
