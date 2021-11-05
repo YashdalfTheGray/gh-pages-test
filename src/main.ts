@@ -89,7 +89,14 @@ function updateSwatches(
       const textContainer = e.querySelector<HTMLSpanElement>('.text');
       if (textContainer) {
         textContainer.style.color = isColorBackground ? grayscale[k] : color;
-        textContainer.innerText = text;
+
+        // only do this if it is required, we get animations this way
+        // and also we don't do unnecessary work
+        if (textContainer.innerText !== text) {
+          e.innerHTML = `<span class="text" style="color: ${
+            isColorBackground ? grayscale[k] : color
+          }">${text}</span>`;
+        }
       }
     });
   }
