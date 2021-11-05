@@ -73,4 +73,26 @@ function renderSwatches(
     .join('\n');
 }
 
+function updateSwatches(
+  text: string,
+  color: string,
+  isColorBackground: boolean
+) {
+  const swatches = swatchContainer.querySelectorAll<HTMLDivElement>('.swatch');
+  if (swatches.length === 0) {
+    renderSwatches();
+  } else {
+    const grayscale = generate4BitGrayscale();
+
+    swatches.forEach((e, k) => {
+      e.style.backgroundColor = isColorBackground ? color : grayscale[k];
+      const textContainer = e.querySelector<HTMLSpanElement>('.text');
+      if (textContainer) {
+        textContainer.style.color = isColorBackground ? grayscale[k] : color;
+        textContainer.innerText = text;
+      }
+    });
+  }
+}
+
 renderSwatches();
