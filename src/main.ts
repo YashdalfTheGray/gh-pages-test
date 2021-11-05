@@ -39,17 +39,17 @@ useColorForBackground.checked = isColorBackgroundByDefault;
 
 textInput.addEventListener('change', (e) => {
   currentText = (e.currentTarget as HTMLInputElement).value;
-  renderSwatches(currentText, currentColor);
+  updateSwatches(currentText, currentColor, isColorBackground);
 });
 
 colorInput.addEventListener('change', (e) => {
   currentColor = (e.currentTarget as HTMLInputElement).value;
-  renderSwatches(currentText, currentColor);
+  updateSwatches(currentText, currentColor, isColorBackground);
 });
 
 useColorForBackground.addEventListener('change', (e) => {
   isColorBackground = (e.currentTarget as HTMLInputElement).checked;
-  renderSwatches(currentText, currentColor, isColorBackground);
+  updateSwatches(currentText, currentColor, isColorBackground);
 });
 
 function renderSwatches(

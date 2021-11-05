@@ -184,6 +184,7 @@ input {
       animation-fill-mode: both;
       animation-timing-function: ease-in-out;
       animation-delay: calc(var(--animation-order) * 75ms);
+      transition: background-color 0.5s ease-in-out;
 
       .text {
         animation: animateIn $animationTime;
@@ -191,6 +192,7 @@ input {
         animation-timing-function: ease-in-out;
         animation-delay: calc((var(--animation-order) + 2) * 75ms);
         background-color: transparent;
+        transition: color 0.5s ease-in-out;
       }
     }
   }
