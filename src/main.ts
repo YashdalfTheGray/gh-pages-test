@@ -1,5 +1,5 @@
 const defaultText = 'Sample text';
-const defaultColor = '#1976D2';
+const defaultColor = '#03a9f4';
 const isColorBackgroundByDefault = false;
 
 let currentText = defaultText;
