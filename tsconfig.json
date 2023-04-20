@@ -16,7 +16,6 @@
     "removeComments": false,
     "noLib": false,
     "preserveConstEnums": true,
-    "suppressImplicitAnyIndexErrors": true,
     "outDir": "docs/"
   },
   "filesGlob": ["./src/**/*.ts"],
