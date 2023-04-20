@@ -54,6 +54,7 @@ body {
 input {
   border-radius: 0px;
   -webkit-border-radius: 0px;
+  appearance: none;
   -webkit-appearance: none;
 }
 
@@ -117,6 +118,7 @@ input {
         background: $background;
         width: 90px;
         height: 30px;
+        appearance: initial;
         -webkit-appearance: initial;
         border-radius: 3px;
         outline: none;
