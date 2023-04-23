@@ -16,7 +16,8 @@
     "build-prod": "npm run build-sass-prod && npm run build-ts-prod",
     "clean": "npx rimraf docs/*.css docs/*.js docs/*.map",
     "prepare": "husky install",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "lint-staged": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,10 @@
     "sass": "^1.62.0",
     "typescript": "^5.0.4",
     "uglify-js": "^3.17.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write"
+    ]
   }
 }
