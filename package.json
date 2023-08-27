@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/YashdalfTheGray/gh-pages-test#readme",
   "devDependencies": {
-    "concurrently": "^8.2.0",
+    "concurrently": "^8.2.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "prettier": "^3.0.2",
